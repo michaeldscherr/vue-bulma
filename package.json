@@ -1,0 +1,22 @@
+{
+  "name": "vue-bulma",
+  "version": "0.1.0",
+  "description": "A Vue.js project porting the Bulma Framework into Vue Components",
+  "main": "src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaeldscherr/vue-bulma.git"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "bulma"
+  ],
+  "author": "Michael Scherr <mikescherr@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaeldscherr/vue-bulma/issues"
+  },
+  "homepage": "https://github.com/michaeldscherr/vue-bulma#readme"
+}
