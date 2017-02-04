@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/michaeldscherr/vue-bulma/issues"
   },
-  "homepage": "https://github.com/michaeldscherr/vue-bulma#readme"
+  "homepage": "https://github.com/michaeldscherr/vue-bulma#readme",
+  "dependencies": {}
 }
