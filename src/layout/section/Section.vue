@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import modifiers from '../../core/modifiers/modifiers';
-import responsiveHelpers from '../../core/modifiers/responsive-helpers';
+import modifiers from 'core/modifiers/modifiers';
+import responsiveHelpers from 'core/modifiers/responsive-helpers';
 import {
     getModClass,
-} from '../../core/utils';
+} from 'core/utils';
 
 export default {
     props: {

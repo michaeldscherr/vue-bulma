@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import Core from './core';
-import LayoutContainer from './layout/container';
-import LayoutSection from './layout/section';
-import LayoutHero from './layout/hero';
-import LayoutFooter from './layout/footer';
-import Box from './elements/box';
+import Core from 'core';
+import LayoutContainer from 'layout/container';
+import LayoutSection from 'layout/section';
+import LayoutHero from 'layout/hero';
+import LayoutFooter from 'layout/footer';
+import Box from 'elements/box';
 
 const components = {
     Core,
