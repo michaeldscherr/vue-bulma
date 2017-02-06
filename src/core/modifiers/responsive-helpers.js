@@ -26,30 +26,15 @@ export const hide = [
     'hidden',
 ];
 
-function getClassMap(className, modifiers) {
-    const modifiersFresh = [...modifiers];
-
-    if (!modifiersFresh.length) {
-        return true;
-    }
-
-    modifiersFresh[0].map((mod) => {
-        let newClassName = `${className}-${mod}`;
-        modifiersFresh.shift();
-        return [
-            newClassName,
-            getClassMap(newClassName, modifiersFresh),
-        ];
-    });
+function getClassMap(baseClass, modifiers = [screens, mods]) {
+    //
 }
 
 export default flattenDeep([
     [...show, ...hide].map(baseClass => {
-        return [
-            baseClass,
-            getClassMap(baseClass, [screens, mods]),
-        ];
-    })
+        baseClass = `is-${baseClass}`;
+        return getClassMap(baseClass);
+    }),
     /*
     getClassMap(show),
     getClassMap(hide),
