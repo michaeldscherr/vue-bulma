@@ -1,5 +1,6 @@
 import {
     flattenDeep,
+    size,
 } from 'lodash';
 
 export const screens = [
@@ -26,16 +27,16 @@ export const hide = [
     'hidden',
 ];
 
-function getClassMap(baseClass, modifiers = [screens, mods]) {
+function getClassMap(baseClass, modifiers) {
     //
 }
 
 export default flattenDeep([
+    /*
     [...show, ...hide].map(baseClass => {
         baseClass = `is-${baseClass}`;
         return getClassMap(baseClass);
     }),
-    /*
     getClassMap(show),
     getClassMap(hide),
     [...show, ...hide].map(baseClass => {
