@@ -1,6 +1,5 @@
 import {
     flattenDeep,
-    size,
 } from 'lodash';
 
 export const screens = [
@@ -27,23 +26,24 @@ export const hide = [
     'hidden',
 ];
 
-export default flattenDeep([
-    [...show, ...hide].map(baseClass => {
-        const className = `is-${baseClass}`;
-        return [
-            className,
-            screens.map((screen) => {
-                const screenName = `${className}-${screen}`;
-                return [
-                    screenName,
-                    verbs.map((verb) => {
-                        const verbName = `${screenName}-${verb}`;
-                        return [
-                            verbName,
-                        ];
-                    }),
-                ];
-            }),
-        ];
-    }),
-]);
+function getClassMap(baseClasses, mods) {
+    baseClasses = [...baseClasses];
+    return flattenDeep(baseClasses.map((base) => (
+        mods.map((mod) => `${base}-${mod}`)
+    )));
+}
+
+export default (function responsiveHelpers() {
+    const classMap = [];
+    [show, hide].forEach((base) => {
+        const mods = [screens, verbs];
+        let classes = [...base].map((item) => `is-${item}`);
+        classMap.push(classes);
+        while (mods.length) {
+            const tmpClasses = getClassMap(classes, mods.shift());
+            classMap.push(tmpClasses);
+            classes = tmpClasses;
+        }
+    });
+    return flattenDeep(classMap);
+}());
