@@ -11,7 +11,7 @@ export const screens = [
     'widescreen',
 ];
 
-export const mods = [
+export const verbs = [
     'only',
 ];
 
@@ -27,18 +27,7 @@ export const hide = [
     'hidden',
 ];
 
-function getClassMap(baseClass, modifiers) {
-    //
-}
-
 export default flattenDeep([
-    /*
-    [...show, ...hide].map(baseClass => {
-        baseClass = `is-${baseClass}`;
-        return getClassMap(baseClass);
-    }),
-    getClassMap(show),
-    getClassMap(hide),
     [...show, ...hide].map(baseClass => {
         const className = `is-${baseClass}`;
         return [
@@ -47,15 +36,14 @@ export default flattenDeep([
                 const screenName = `${className}-${screen}`;
                 return [
                     screenName,
-                    mods.map((mod) => {
-                        const modName = `${screenName}-${mod}`;
+                    verbs.map((verb) => {
+                        const verbName = `${screenName}-${verb}`;
                         return [
-                            modName,
+                            verbName,
                         ];
                     }),
                 ];
             }),
         ];
     }),
-    */
 ]);
