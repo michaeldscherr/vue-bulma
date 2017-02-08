@@ -5,6 +5,7 @@ import LayoutSection from 'layout/section';
 import LayoutHero from 'layout/hero';
 import LayoutFooter from 'layout/footer';
 import Box from 'elements/box';
+import Grid from 'grid';
 
 const components = {
     Core,
@@ -13,6 +14,7 @@ const components = {
     LayoutContainer,
     LayoutHero,
     LayoutFooter,
+    Grid,
 };
 
 components.install = () => {

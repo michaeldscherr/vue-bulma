@@ -8,7 +8,6 @@
 
 <script>
 import modifiers from 'core/modifiers/modifiers';
-import responsiveHelpers from 'core/modifiers/responsive-helpers';
 import {
     getModClass,
 } from 'core/utils';
@@ -24,9 +23,6 @@ export default {
                 ));
             },
         },
-    },
-    created() {
-        console.log(responsiveHelpers);
     },
     computed: {
         classes() {
