@@ -51,10 +51,10 @@
                     if (isBoolean(value)) {
                         return true;
                     }
-                    return value.every((val) => {
-                        return screens.includes(val);
-                    });
-                }
+                    return value.every((val) => (
+                        screens.includes(val)
+                    ));
+                },
             },
         },
         mixins: [
