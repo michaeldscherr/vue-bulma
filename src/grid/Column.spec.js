@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Column from './Column.vue';
-import Columns from './Columns.vue';
 
 function getRenderedText (Component, propsData) {
     const Ctor = Vue.extend(Component);

@@ -1,10 +1,22 @@
+const webpackConfig = require('./webpack.config.js');
+
+delete webpackConfig.entry;
+
 module.exports = function karmaConfig(config) {
     config.set({
-        basePath: './src',
+        basePath: '.',
         frameworks: ['jasmine'],
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
+        reporters: ['progress'],
         files: [
-            '**/**/test.js',
+            'test/index.js',
         ],
+        preprocessors: {
+            'test/index.js': ['webpack'],
+        },
+        webpack: webpackConfig,
+        webpackMiddleware: {
+            noInfo: true,
+        },
     });
 };

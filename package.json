@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "test": "./node_modules/karma/bin/karma start"
+    "test": "./node_modules/karma/bin/karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
   "homepage": "https://github.com/michaeldscherr/vue-bulma#readme",
   "dependencies": {
     "jasmine-core": "^2.5.2",
-    "karma-chrome-launcher": "^2.0.0",
     "vue": "^2.1.0"
   },
   "devDependencies": {
@@ -38,6 +37,7 @@
     "file-loader": "^0.9.0",
     "karma": "^1.4.1",
     "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
     "karma-webpack": "^2.0.2",
     "lodash": "^4.17.4",
     "vue-loader": "^10.0.0",
