@@ -7,7 +7,7 @@ function getRenderedText (Component, propsData) {
     return vm.$el.textContent;
 }
 
-(function GridTest(describe, it, expect) {
+(function ColumnSpec(describe, it, expect) {
     describe('Column', () => {
         it('renders correctly', () => {
             expect(getRenderedText(Column, {
