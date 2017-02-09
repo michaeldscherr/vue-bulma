@@ -1,6 +1,10 @@
-import {
-    flattenDeep,
-} from 'lodash';
+export const sizes = [
+    'three-quarters',
+    'two-thirds',
+    'half',
+    'one-third',
+    'one-quarter',
+];
 
 export const screens = [
     'touch',
@@ -26,6 +30,7 @@ export const hide = [
     'hidden',
 ];
 
+/*
 function getClassMap(baseClasses, mods) {
     baseClasses = [...baseClasses];
     return flattenDeep(baseClasses.map((base) => (
@@ -47,3 +52,4 @@ export default (function responsiveHelpers() {
     });
     return flattenDeep(classMap);
 }());
+*/

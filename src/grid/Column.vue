@@ -7,7 +7,15 @@
 </template>
 
 <script>
-    import sizes from 'core/modifiers/sizes';
+    import {
+        inRange,
+        isBoolean,
+    } from 'lodash';
+    import {
+        screens,
+        sizes,
+    } from 'core/modifiers/responsive-helpers';
+    import ClassesMixin from 'mixins/classes';
 
     export default {
         props: {
@@ -15,18 +23,54 @@
                 required: false,
                 type: Number,
                 validator(value) {
-                    return Object.keys(sizes).includes(value.toString());
+                    return inRange(value, 1, 12);
                 },
             },
-        },
-        computed: {
-            classes() {
-                const classes = { column: true };
-                if (this.size) {
-                    classes[sizes[this.size]] = true;
-                }
-                return classes;
+            offset: {
+                required: false,
+                type: Number,
+                validator(value) {
+                    return inRange(value, 1, 12);
+                },
             },
+            breakpoints: {
+                required: false,
+                type: Object,
+                validator(value) {
+                    return Object.entries(value).every(([key, val]) => (
+                        screens.includes(key) &&
+                        sizes.includes(val)
+                    ));
+                },
+            },
+            narrow: {
+                required: false,
+                type: [Boolean, Array],
+                default: false,
+                validator(value) {
+                    if (isBoolean(value)) {
+                        return true;
+                    }
+                    return value.every((val) => {
+                        return screens.includes(val);
+                    });
+                }
+            },
+        },
+        mixins: [
+            ClassesMixin,
+        ],
+        data() {
+            return {
+                staticClasses: [
+                    'column',
+                ],
+                prefixes: {
+                    size: 'is',
+                    offset: 'is-offset',
+                    narrow: 'is',
+                },
+            };
         },
     };
 </script>

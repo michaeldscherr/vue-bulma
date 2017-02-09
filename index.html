@@ -10,11 +10,25 @@
 <body>
     <div id="app">
         <bm-section>
-            <bm-grid>
-                <bm-column :size="2">
+            <bm-columns
+                breakpoint="mobile"
+                gapless
+                multiline
+            >
+                <bm-column
+                    :breakpoints="{
+                        mobile: 'half',
+                        tablet: 'one-third',
+                        desktop: 'one-quarter',
+                    }"
+                >
                     <p>hello</p>
                 </bm-column>
-                <bm-column>
+                <bm-column
+                    :size="1"
+                    :offset="2"
+                    :narrow="['mobile', 'tablet']"
+                >
                     <p>hello</p>
                 </bm-column>
             </bm-grid>
