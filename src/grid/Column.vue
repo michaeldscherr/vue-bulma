@@ -15,9 +15,16 @@
         screens,
         sizes,
     } from 'core/modifiers/responsive-helpers';
-    import ClassesMixin from 'mixins/classes';
+    import {
+        ClassPropMixin,
+        ClassResponsiveMixin,
+    } from 'mixins';
 
     export default {
+        mixins: [
+            ClassPropMixin,
+            ClassResponsiveMixin,
+        ],
         props: {
             size: {
                 required: false,
@@ -57,12 +64,9 @@
                 },
             },
         },
-        mixins: [
-            ClassesMixin,
-        ],
         data() {
             return {
-                staticClasses: [
+                classStatic: [
                     'column',
                 ],
                 prefixes: {
@@ -71,6 +75,14 @@
                     narrow: 'is',
                 },
             };
+        },
+        methods: {
+            classes() {
+                return [
+                    ...this.classStatic,
+                    ...this.classProp,
+                ];
+            },
         },
     };
 </script>

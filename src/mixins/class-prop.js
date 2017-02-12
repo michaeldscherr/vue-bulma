@@ -19,12 +19,11 @@ function getPropClassValue(prop, prefix) {
 export default {
     data() {
         return {
-            staticClasses: [],
             prefixes: {},
         };
     },
     computed: {
-        propClasses() {
+        classProp() {
             const classes = [];
             this.$options._propKeys.forEach((prop) => {
                 const prefix = this.prefixes[prop];
@@ -36,21 +35,5 @@ export default {
             });
             return classes;
         },
-        responsiveClasses() {
-            if (!this.breakpoints) {
-                return [];
-            }
-            const breakpoints = Object.entries(this.breakpoints);
-            return breakpoints.map(([key, value]) => (
-                `is-${value}-${key}`
-            ));
-        },
-        classes() {
-            return [
-                ...this.staticClasses,
-                ...this.propClasses,
-                ...this.responsiveClasses,
-            ];
-        },
-    },
+    }
 };

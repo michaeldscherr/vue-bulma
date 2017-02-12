@@ -10,9 +10,16 @@
 import {
     screens,
 } from 'core/modifiers/responsive-helpers';
-import ClassesMixin from 'mixins/classes';
+import {
+    ClassPropMixin,
+    ClassResponsiveMixin,
+} from 'mixins';
 
 export default {
+    mixins: [
+        ClassPropMixin,
+        ClassResponsiveMixin,
+    ],
     props: {
         breakpoint: {
             required: false,
@@ -32,12 +39,9 @@ export default {
             default: false,
         },
     },
-    mixins: [
-        ClassesMixin,
-    ],
     data() {
         return {
-            staticClasses: [
+            classStatic: [
                 'columns',
             ],
             prefixes: {
@@ -46,6 +50,15 @@ export default {
                 gapless: 'is',
             },
         };
+    },
+    methods: {
+        classes() {
+            return [
+                ...this.classStatic,
+                ...this.classResponsive,
+                ...this.classResponsive,
+            ];
+        },
     },
 };
 </script>
