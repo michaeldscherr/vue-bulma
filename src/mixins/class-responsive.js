@@ -1,5 +1,5 @@
 import {
-    isArray,
+    isString,
 } from 'lodash';
 
 export default {
@@ -8,7 +8,7 @@ export default {
             if (!this.responsive) {
                 return [];
             }
-            if (!isArray(this.responsive)) {
+            if (isString(this.responsive)) {
                 return [`is-${this.responsive}`];
             }
             const responsive = Object.entries(this.responsive);

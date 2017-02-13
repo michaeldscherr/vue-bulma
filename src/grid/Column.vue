@@ -80,6 +80,7 @@
             classes() {
                 return [
                     ...this.classStatic,
+                    ...this.classResponsive,
                     ...this.classProp,
                 ];
             },

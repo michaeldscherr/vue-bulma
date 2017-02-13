@@ -27,13 +27,18 @@ export default {
             const classes = [];
             this.$options._propKeys.forEach((prop) => {
                 const prefix = this.prefixes[prop];
-                if (isUndefined(this[prop]) || isUndefined(prefix)) {
+                if (
+                    isUndefined(this[prop]) ||
+                    isUndefined(prefix) ||
+                    !this[prop]
+                ) {
                     return;
                 }
-                const propValue = getPropClassValue.call(this, prop, prefix);
-                classes.push(...propValue);
+                classes.push(
+                    ...getPropClassValue.call(this, prop, prefix)
+                );
             });
             return classes;
         },
-    }
+    },
 };

@@ -9,30 +9,32 @@
 </head>
 <body>
     <div id="app">
-        <bm-section size="medium">
-            <bm-columns
-                responsive="mobile"
-                gapless
-                multiline
-            >
-                <bm-column
-                    :responsive="{
-                        mobile: 'half',
-                        tablet: 'one-third',
-                        desktop: 'one-quarter',
-                    }"
+        <bm-container fluid>
+            <bm-section size="medium">
+                <bm-columns
+                    responsive="mobile"
+                    gapless
+                    multiline
                 >
-                    <p>hello</p>
-                </bm-column>
-                <bm-column
-                    :size="1"
-                    :offset="2"
-                    :narrow="['mobile', 'tablet']"
-                >
-                    <p>hello</p>
-                </bm-column>
-            </bm-columns>
-        </bm-section>
+                    <bm-column
+                        :responsive="{
+                            mobile: 'half',
+                            tablet: 'one-third',
+                            desktop: 'one-quarter',
+                        }"
+                    >
+                        <p>hello</p>
+                    </bm-column>
+                    <bm-column
+                        :size="2"
+                        :offset="2"
+                        :narrow="['mobile', 'tablet']"
+                    >
+                        <p>hello</p>
+                    </bm-column>
+                </bm-columns>
+            </bm-section>
+        </bm-container>
     </div>
     <script src="/dist/build.js"></script>
 </body>
