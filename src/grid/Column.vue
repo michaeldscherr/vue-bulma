@@ -40,7 +40,7 @@
                     return inRange(value, 1, 12);
                 },
             },
-            breakpoints: {
+            responsive: {
                 required: false,
                 type: Object,
                 validator(value) {
@@ -76,7 +76,7 @@
                 },
             };
         },
-        methods: {
+        computed: {
             classes() {
                 return [
                     ...this.classStatic,

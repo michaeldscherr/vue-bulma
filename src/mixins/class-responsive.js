@@ -1,13 +1,20 @@
+import {
+    isArray,
+} from 'lodash';
+
 export default {
     computed: {
         classResponsive() {
-            if (!this.breakpoints) {
+            if (!this.responsive) {
                 return [];
             }
-            const breakpoints = Object.entries(this.breakpoints);
-            return breakpoints.map(([key, value]) => (
+            if (!isArray(this.responsive)) {
+                return [`is-${this.responsive}`];
+            }
+            const responsive = Object.entries(this.responsive);
+            return responsive.map(([key, value]) => (
                 `is-${value}-${key}`
             ));
         },
-    }
+    },
 };

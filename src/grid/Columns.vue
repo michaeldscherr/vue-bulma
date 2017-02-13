@@ -21,7 +21,7 @@ export default {
         ClassResponsiveMixin,
     ],
     props: {
-        breakpoint: {
+        responsive: {
             required: false,
             type: String,
             validator(value) {
@@ -51,11 +51,11 @@ export default {
             },
         };
     },
-    methods: {
+    computed: {
         classes() {
             return [
                 ...this.classStatic,
-                ...this.classResponsive,
+                ...this.classProp,
                 ...this.classResponsive,
             ];
         },
