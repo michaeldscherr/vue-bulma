@@ -30,26 +30,9 @@ export const hide = [
     'hidden',
 ];
 
-/*
-function getClassMap(baseClasses, mods) {
-    baseClasses = [...baseClasses];
-    return flattenDeep(baseClasses.map((base) => (
-        mods.map((mod) => `${base}-${mod}`)
-    )));
-}
-
-export default (function responsiveHelpers() {
-    const classMap = [];
-    [show, hide].forEach((base) => {
-        const mods = [screens, verbs];
-        let classes = [...base].map((item) => `is-${item}`);
-        classMap.push(classes);
-        while (mods.length) {
-            const tmpClasses = getClassMap(classes, mods.shift());
-            classMap.push(tmpClasses);
-            classes = tmpClasses;
-        }
-    });
-    return flattenDeep(classMap);
-}());
-*/
+export default {
+    sizes,
+    screens,
+    show,
+    hide,
+};

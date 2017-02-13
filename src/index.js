@@ -5,15 +5,19 @@ import LayoutSection from 'layout/section';
 import LayoutHero from 'layout/hero';
 import LayoutFooter from 'layout/footer';
 import Box from 'elements/box';
+import Button from 'elements/button';
+import Content from 'elements/content';
 import Grid from 'grid';
 
 const components = {
     Core,
-    Box,
-    LayoutSection,
     LayoutContainer,
+    LayoutSection,
     LayoutHero,
     LayoutFooter,
+    Box,
+    Button,
+    Content,
     Grid,
 };
 

@@ -8,8 +8,8 @@
 
 <script>
 import {
-    screens,
-} from 'core/modifiers/responsive-helpers';
+    responsive,
+} from 'core/modifiers';
 import {
     ClassPropMixin,
     ClassResponsiveMixin,
@@ -25,7 +25,7 @@ export default {
             required: false,
             type: String,
             validator(value) {
-                return screens.includes(value);
+                return responsive.screens.includes(value);
             },
         },
         multiline: {

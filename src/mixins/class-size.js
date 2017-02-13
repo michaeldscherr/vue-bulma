@@ -1,7 +1,6 @@
-import modifiers from 'core/modifiers/modifiers';
 import {
-    getModClass,
-} from 'core/utils';
+    sizes,
+} from 'core/modifiers';
 
 export default {
     props: {
@@ -9,15 +8,15 @@ export default {
             required: false,
             type: String,
             validator(value) {
-                return modifiers.sizes.some((mod) => (
-                    mod.split('-')[1] === value
+                return sizes.some((mod) => (
+                    mod === value
                 ));
             },
         },
     },
     computed: {
         classSize() {
-            return this.size ? [getModClass(this.size)] : [];
+            return this.size ? [`is-${this.size}`] : [];
         },
     },
 };

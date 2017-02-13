@@ -12,9 +12,8 @@
         isBoolean,
     } from 'lodash';
     import {
-        screens,
-        sizes,
-    } from 'core/modifiers/responsive-helpers';
+        responsive,
+    } from 'core/modifiers';
     import {
         ClassPropMixin,
         ClassResponsiveMixin,
@@ -45,8 +44,8 @@
                 type: Object,
                 validator(value) {
                     return Object.entries(value).every(([key, val]) => (
-                        screens.includes(key) &&
-                        sizes.includes(val)
+                        responsive.screens.includes(key) &&
+                        responsive.sizes.includes(val)
                     ));
                 },
             },
@@ -59,7 +58,7 @@
                         return true;
                     }
                     return value.every((val) => (
-                        screens.includes(val)
+                        responsive.screens.includes(val)
                     ));
                 },
             },

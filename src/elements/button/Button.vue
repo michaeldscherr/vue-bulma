@@ -1,17 +1,24 @@
 <template>
-<div
+<button
     :class="classes"
 >
     <slot></slot>
-</div>
+</button>
 </template>
 
 <script>
+import {
+    ClassSizeMixin,
+} from 'mixins';
+
 export default {
+    mixins: [
+        ClassSizeMixin,
+    ],
     data() {
         return {
             classStatic: [
-                'box',
+                'button',
             ],
         };
     },
@@ -19,6 +26,7 @@ export default {
         classes() {
             return [
                 ...this.classStatic,
+                ...this.classSize,
             ];
         },
     },
