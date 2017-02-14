@@ -9,11 +9,15 @@
 <script>
 import {
     ClassSizeMixin,
+    ClassThemeMixin,
+    ClassStyleMixin,
 } from 'mixins';
 
 export default {
     mixins: [
         ClassSizeMixin,
+        ClassThemeMixin,
+        ClassStyleMixin,
     ],
     data() {
         return {
@@ -27,6 +31,8 @@ export default {
             return [
                 ...this.classStatic,
                 ...this.classSize,
+                ...this.classTheme,
+                ...this.classStyle,
             ];
         },
     },
