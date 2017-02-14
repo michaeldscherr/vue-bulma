@@ -1,7 +1,12 @@
 export default [
-    'is-primary',
-    'is-info',
-    'is-success',
-    'is-warning',
-    'is-danger',
+    'primary',
+    'info',
+    'success',
+    'warning',
+    'danger',
+    'white',
+    'light',
+    'dark',
+    'black',
+    'link',
 ];

@@ -1,5 +1,7 @@
-export default [
-    'is-outlined',
-    'is-loading',
-    'is-disabled',
+export const pseudo = [
+    'hovered',
+    'focused',
+    'active',
+    'loading',
+    'disabled',
 ];
