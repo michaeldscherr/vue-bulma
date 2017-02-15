@@ -1,5 +1,5 @@
 import {
-    styles,
+    states,
 } from 'core/modifiers';
 import {
     normalizeToArray,
@@ -7,24 +7,24 @@ import {
 
 export default {
     props: {
-        styles: {
+        state: {
             required: false,
             type: [String, Array],
             validator(value) {
                 const valueNormalized = normalizeToArray(value);
                 return valueNormalized.every((val) => (
-                    styles.includes(val)
+                    states.includes(val)
                 ));
             },
         },
     },
     computed: {
-        classStyle() {
-            if (!this.styles) {
+        classState() {
+            if (!this.state) {
                 return [];
             }
-            const stylesNormalized = normalizeToArray(this.styles);
-            return stylesNormalized.map((style) => (
+            const stateNormalized = normalizeToArray(this.state);
+            return stateNormalized.map((style) => (
                 `is-${style}`
             ));
         },

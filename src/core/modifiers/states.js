@@ -1,4 +1,5 @@
 export default [
+    'outlined',
     'hovered',
     'focused',
     'active',

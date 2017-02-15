@@ -10,14 +10,14 @@
 import {
     ClassSizeMixin,
     ClassThemeMixin,
-    ClassStyleMixin,
+    ClassStateMixin,
 } from 'mixins';
 
 export default {
     mixins: [
         ClassSizeMixin,
         ClassThemeMixin,
-        ClassStyleMixin,
+        ClassStateMixin,
     ],
     data() {
         return {
@@ -32,7 +32,7 @@ export default {
                 ...this.classStatic,
                 ...this.classSize,
                 ...this.classTheme,
-                ...this.classStyle,
+                ...this.classState,
             ];
         },
     },
