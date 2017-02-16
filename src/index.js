@@ -7,6 +7,7 @@ import LayoutFooter from 'layout/footer';
 import Box from 'elements/box';
 import Button from 'elements/button';
 import Content from 'elements/content';
+import Control from 'elements/control';
 import Grid from 'grid';
 
 const components = {
@@ -18,6 +19,7 @@ const components = {
     Box,
     Button,
     Content,
+    Control,
     Grid,
 };
 
