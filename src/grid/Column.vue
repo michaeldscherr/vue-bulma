@@ -39,16 +39,6 @@
                     return inRange(value, 1, 12);
                 },
             },
-            responsive: {
-                required: false,
-                type: Object,
-                validator(value) {
-                    return Object.entries(value).every(([key, val]) => (
-                        responsive.screens.includes(key) &&
-                        responsive.sizes.includes(val)
-                    ));
-                },
-            },
             narrow: {
                 required: false,
                 type: [Boolean, Array],

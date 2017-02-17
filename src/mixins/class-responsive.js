@@ -1,8 +1,26 @@
 import {
     isString,
 } from 'lodash';
+import {
+    responsive,
+} from 'core/modifiers';
 
 export default {
+    props: {
+        responsive: {
+            required: false,
+            type: [String, Object],
+            validator(value) {
+                if (isString(value)) {
+                    return responsive.screens.includes(value);
+                }
+                return Object.entries(value).every(([key, val]) => (
+                    responsive.screens.includes(key) &&
+                    responsive.sizes.includes(val)
+                ));
+            },
+        },
+    },
     computed: {
         classResponsive() {
             if (!this.responsive) {
@@ -11,8 +29,8 @@ export default {
             if (isString(this.responsive)) {
                 return [`is-${this.responsive}`];
             }
-            const responsive = Object.entries(this.responsive);
-            return responsive.map(([key, value]) => (
+            const entries = Object.entries(this.responsive);
+            return entries.map(([key, value]) => (
                 `is-${value}-${key}`
             ));
         },
