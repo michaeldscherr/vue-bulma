@@ -9,6 +9,7 @@ import Button from 'elements/button';
 import Content from 'elements/content';
 import Control from 'elements/control';
 import Grid from 'grid';
+import Form from 'elements/form';
 
 const components = {
     Core,
@@ -21,6 +22,7 @@ const components = {
     Content,
     Control,
     Grid,
+    Form,
 };
 
 components.install = () => {

@@ -11,6 +11,21 @@
     <div id="app">
         <bm-container fluid>
             <bm-section>
+                <bm-input
+                    theme="info"
+                    bm-type="text"
+                >
+                    <bm-label slot="label">Name</bm-label>
+                    <bm-help slot="help" validation="danger">This username is available</bm-help>
+                </bm-input>
+                <bm-input
+                    bm-type="email"
+                >
+                    <bm-label slot="label">Email Address</bm-label>
+                    <bm-help slot="help" validation="success">This email is available</bm-help>
+                </bm-input>
+            </bm-section>
+            <bm-section>
                 <bm-content>
                     <h1>Control</h1>
                     <bm-control grouped addons>
