@@ -3,13 +3,12 @@
     elem="p"
 >
     <slot name="label"></slot>
-    <input
+    <textarea
         :class="classes"
-        :type="bmType"
         :placeholder="bmPlaceholder"
         :value="value"
         @input="onInput"
-    />
+    ></textarea>
     <slot name="help"></slot>
 </bm-control>
 </template>
@@ -27,16 +26,10 @@ export default {
         ClassThemeMixin,
         TypeInputMixin,
     ],
-    props: {
-        bmType: {
-            required: false,
-            type: String,
-        },
-    },
     data() {
         return {
             classStatic: [
-                'input',
+                'textarea',
             ],
         };
     },

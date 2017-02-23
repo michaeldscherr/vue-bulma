@@ -1,6 +1,6 @@
 <template>
 <component
-    :is="this.elem"
+    :is="elem"
     :class="classes"
 >
     <slot></slot>

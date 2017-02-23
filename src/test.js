@@ -3,6 +3,7 @@ import VueBulma from './index';
 
 Vue.use(VueBulma);
 
-window.vb = new Vue({
+window.bmEventHub = new Vue();
+window.bm = new Vue({
     el: '#app',
 });
