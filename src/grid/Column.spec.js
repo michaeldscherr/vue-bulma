@@ -13,9 +13,9 @@ function getViewModel (Component, propsData) {
     return vm;
 }
 
-(function ColumnSpec(describe, it, expect) {
-    window.beforeEach(() => {
-      window.spyOn(console, 'error');
+(function ColumnSpec(beforeEach, spyOn, describe, it, expect) {
+    beforeEach(() => {
+      spyOn(console, 'error');
     });
     describe('Column w/ Correct Size', () => {
         it('renders correctly', () => {
@@ -33,4 +33,4 @@ function getViewModel (Component, propsData) {
             expect(console.error).toHaveBeenCalled();
         });
     });
-}(window.describe, window.it, window.expect));
+}(window.beforeEach, window.spyOn, window.describe, window.it, window.expect));
